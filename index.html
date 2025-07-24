@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comp Sci High: 11th Grade College Visit Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .tab-active {
+      border-bottom: 2px solid #166534;
+      color: #166534;
+      font-weight: 600;
+    }
+    .tab-inactive {
+      border-bottom: 2px solid transparent;
+      color: #4b5563;
+    }
+    .section-content { display: none; }
+    .section-content.active { display: block; }
+    .timeline-icon {
+      background-color: #16a34a;
+      color: white;
+    }
+    .timeline-line {
+      border-left: 2px solid #d1fae5;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center text-emerald-700 mb-10">Comp Sci High: 11th Grade College Visit Guide</h1>
+
+    <div class="flex justify-center space-x-6 border-b pb-2 mb-6">
+      <button class="tab-button tab-active" data-target="overview">Overview</button>
+      <button class="tab-button tab-inactive" data-target="fall">Fall CUNY Visit</button>
+      <button class="tab-button tab-inactive" data-target="spring">Spring Visit</button>
+      <button class="tab-button tab-inactive" data-target="resources">Resources</button>
+    </div>
+
+    <div id="overview" class="section-content active">
+      <p class="mb-6 text-lg">Welcome to the 11th Grade College Visit Guide! This is your go-to hub for understanding our fall CUNY visit, your spring choice visit, and key deadlines. Let’s get college ready!</p>
+      <div class="video-container relative w-full pb-[56.25%] mb-6">
+        <iframe class="absolute top-0 left-0 w-full h-full rounded" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Intro Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div id="fall" class="section-content">
+      <h2 class="text-2xl font-semibold text-emerald-700 mb-4">Fall CUNY Visit Timeline</h2>
+      <ol class="relative border-l-2 border-emerald-200 pl-6 space-y-6">
+        <li>
+          <div class="timeline-icon w-6 h-6 rounded-full flex items-center justify-center mb-1">1</div>
+          <p><strong>September:</strong> Submit interest form</p>
+        </li>
+        <li>
+          <div class="timeline-icon w-6 h-6 rounded-full flex items-center justify-center mb-1">2</div>
+          <p><strong>October:</strong> Complete permission slips</p>
+        </li>
+        <li>
+          <div class="timeline-icon w-6 h-6 rounded-full flex items-center justify-center mb-1">3</div>
+          <p><strong>November:</strong> Attend the CUNY Visit</p>
+        </li>
+      </ol>
+    </div>
+
+    <div id="spring" class="section-content">
+      <h2 class="text-2xl font-semibold text-emerald-700 mb-4">Spring Choice Visit</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>January:</strong> Submit spring interest form</li>
+        <li><strong>February:</strong> Get matched with a college</li>
+        <li><strong>March:</strong> Attend your individual or group visit</li>
+      </ul>
+    </div>
+
+    <div id="resources" class="section-content">
+      <h2 class="text-2xl font-semibold text-emerald-700 mb-4">Deadlines & Resources</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Oct 5:</strong> Permission slip due</li>
+        <li><strong>March 1:</strong> Research worksheet due</li>
+        <li><a href="https://www.cuny.edu" target="_blank" class="text-blue-600 underline">Visit the CUNY website</a></li>
+        <li><a href="#" class="text-blue-600 underline">Download the Visit Checklist (PDF)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.tab-button');
+      const sections = document.querySelectorAll('.section-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.replace('tab-active', 'tab-inactive'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          tab.classList.replace('tab-inactive', 'tab-active');
+          const targetId = tab.getAttribute('data-target');
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
